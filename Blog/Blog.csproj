@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp2.1</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
+		<PackageReference Include="PhotoSauce.MagicScaler" Version="0.10.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="wwwroot\content\blog\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="wwwroot\lib\Trumbowyg-master\.github\FUNDING.yml" />
+		<None Include="wwwroot\lib\Trumbowyg-master\.github\ISSUE_TEMPLATE.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!--wwwroot/content/blog/*.* after deploy change this-->
+		<Content Update="wwwroot/content/*.*" CopyToPublishDirectory="Never" />
+		<Content Update="wwwroot/lib/**/*.*" CopyToPublishDirectory="Never" />
+		<Content Update="wwwroot/lib/**/dist/**/*.*" CopyToPublishDirectory="Always" />
+	</ItemGroup>
+
+</Project>
